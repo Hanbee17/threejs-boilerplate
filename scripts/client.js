@@ -14,19 +14,19 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 const renderer = new THREE.WebGLRenderer();
-renderer.setClearColor(0xdfdfdf);
+renderer.setClearColor(0x2B2D42);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(500, 500);
 document.body.appendChild(renderer.domElement);
 
 // Add a polygon to the scene
-const geometry = new THREE.IcosahedronGeometry(1, 0);
-const material = new THREE.MeshStandardMaterial({ color: 0x2e8e39 });
-const poly = new THREE.Mesh(geometry, material);
-scene.add(poly);
+const geometry = new THREE.SphereGeometry( 15, 32, 16 );
+const material = new THREE.MeshBasicMaterial( { color: 0xFFAFCC } );
+const sphere = new THREE.Mesh( geometry, material );
+scene.add( sphere );
 
 // add wireframe to shape
-const matLineBasic = new THREE.LineBasicMaterial({ color: 0x2e8e99 });
+const matLineBasic = new THREE.LineBasicMaterial({ color: 0xCDB4DB });
 const wireframe = new THREE.WireframeGeometry(geometry);
 const line = new THREE.LineSegments(wireframe, matLineBasic);
 line.material.depthTest = false;
@@ -51,8 +51,8 @@ function render() {
   requestAnimationFrame(render);
 
   // Rotate our shape
-  poly.rotation.x += 0.005;
-  poly.rotation.y += 0.005;
+  sphere.rotation.x += 0.005;
+  sphere.rotation.y += 0.005;
   line.rotation.x += 0.005;
   line.rotation.y += 0.005;
   renderer.render(scene, camera);
