@@ -37,7 +37,7 @@ var mesh;
 
 // Load GLTF model, add material, and add it to the scene
 const loader = new GLTFLoader().load(
-  "../../assets/testing123fogv3.glb", // comment this line out and un comment the line below to swithc models
+  "../../assets/HanbeeCho.glb", // comment this line out and un comment the line below to swithc models
   //"./assets/gourd_web.glb", //<-- photogrammetery model
   function(gltf) {
     // Scan loaded model for mesh and apply defined material if mesh is present
@@ -71,11 +71,11 @@ controls.update();
 camera.position.z = 4.5;
 
 // Add a directional light to the scene
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9);
+const directionalLight = new THREE.DirectionalLight(0xBDE0FE, 0.9);
 scene.add(directionalLight);
 
 // Add an ambient light to the scene
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+const ambientLight = new THREE.AmbientLight(0xBDE0FE, 0.9);
 scene.add(ambientLight);
 
 // Define and call the render loop
